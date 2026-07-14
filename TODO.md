@@ -7,6 +7,7 @@
 - [x] ~~Provide list of GP-related URLs/services to Mark Huggins for UAT config~~ ✓ Jul 9
 - [x] ~~Confirm INT6142 single-call fix results with Phillip~~ ✓ Jul 9
 - [ ] **[Jul 15-16]** Follow-up call with Mark, John, Ronan on UAT cluster progress
+- [ ] **[Due Jul 16]** Create SIT/Unit Testing cases and share with John Lawrence for review
 
 ## In Progress
 
