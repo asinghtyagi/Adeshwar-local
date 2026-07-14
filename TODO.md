@@ -22,6 +22,11 @@
 - [ ] Clarify with Workday team whether original two-call split (supplier + address) was intentional design
 - [ ] Investigate "only one active settlement bank account / no payment type selected" error on specific supplier
 
+## Strategy
+
+- Airflow dependency currently sits only with the US team — can leverage India team to provide support coverage during US night hours.
+- Hiring on the India side should be considered due to lower cost.
+
 ## Backlog
 
 - [ ] Review GP DB env vars (DBGP_HOST, DBGP_NAME, etc.) with colleague
