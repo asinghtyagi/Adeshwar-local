@@ -13,7 +13,7 @@
 
 - [ ] Create project tracker sheet and share with India team
 - [ ] Support Ronan/Raul on update indicator + reissue logic for ingestion side (Snowflake → Workday)
-- [ ] Environment setup: UAT cluster + S3 + Workday sandbox (Mark Huggins leading, target ~Jul 15)
+- [ ] Environment setup: UAT cluster + S3 + Workday sandbox (Mark Huggins leading, target ~Jul 18)
 
 ## Follow-ups / Waiting
 
