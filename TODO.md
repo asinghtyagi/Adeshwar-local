@@ -7,7 +7,7 @@
 - [x] ~~Provide list of GP-related URLs/services to Mark Huggins for UAT config~~ ✓ Jul 9
 - [x] ~~Confirm INT6142 single-call fix results with Phillip~~ ✓ Jul 9
 - [ ] **[Jul 18]** Follow-up call with Mark, John, Ronan on UAT cluster + S3 + Workday sandbox progress
-- [ ] **[Due Jul 16]** Create SIT/Unit Testing cases and share with John Lawrence for review
+- [x] ~~**[Due Jul 16]** Create SIT/Unit Testing cases and share with John Lawrence for review~~ ✓ Jul 16
 
 ## In Progress
 
