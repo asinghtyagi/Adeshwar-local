@@ -1,5 +1,7 @@
 # bi_jobs — Airflow Docker Container Build & Deploy
 
+**GitHub:** [glg/bi_jobs](https://github.com/glg/bi_jobs)
+
 ## Overview
 
 `bi_jobs` is the **infrastructure repository** for GLG's Airflow 3 deployment. It builds the production Docker container image, pushes it to AWS ECR, and deploys it via AWS CodeDeploy. It also contains a full local development environment so engineers can run Airflow on their laptop.

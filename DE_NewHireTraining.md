@@ -1,5 +1,7 @@
 # DE_NewHireTraining — DRE New Hire Onboarding Guide
 
+**GitHub:** [asinghtyagi/DE_NewHireTraining](https://github.com/asinghtyagi/DE_NewHireTraining)
+
 ## Overview
 
 `DE_NewHireTraining` is the official onboarding documentation repository for the GLG **Data and Reporting Engineering (DRE)** team. It contains a comprehensive guide that walks new team members through everything they need to know: team structure, tooling, access provisioning, workflows, and coding standards.

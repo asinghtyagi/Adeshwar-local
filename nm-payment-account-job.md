@@ -1,5 +1,7 @@
 # nm-payment-account-job — Network Member Payment Account Sync
 
+**GitHub:** [glg/nm-payment-account-job](https://github.com/glg/nm-payment-account-job)
+
 ## Overview
 
 `nm-payment-account-job` is an automated job that syncs **Network Member (NM) bank account and payment data** from GLG's internal systems (GLGLIVE SQL Server + Great Plains) into **Workday** via the Workday REST API. It handles AES-CBC decryption of encrypted bank credentials before submission and logs all results back to Snowflake.

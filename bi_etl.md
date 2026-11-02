@@ -1,5 +1,7 @@
 # bi_etl — Python ETL Engine
 
+**GitHub:** [glg/bi_etl](https://github.com/glg/bi_etl)
+
 ## Overview
 
 `bi_etl` is the **custom Python ETL engine** that powers all WARS data warehouse loads. It orchestrates the SQL scripts in `BI_vdw` by resolving foreign-key dependency order, managing batch tracking, and executing loads against Snowflake. It is the core runtime for the DRE data platform.

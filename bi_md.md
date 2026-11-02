@@ -1,5 +1,7 @@
 # bi_md — Master Data ETL
 
+**GitHub:** [glg/bi_md](https://github.com/glg/bi_md)
+
 ## Overview
 
 `bi_md` is the **Master Data (MD) ETL repository** for GLG. It contains SQL ETL scripts and DDL for a Snowflake master data database that serves as the authoritative source for Workday Prism integrations, WARS reporting, and other downstream consumers. Data sourced here feeds finance, HR, and operational reporting systems.

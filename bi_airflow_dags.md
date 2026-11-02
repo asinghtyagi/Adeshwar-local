@@ -1,5 +1,7 @@
 # bi_airflow_dags — Airflow DAG Definitions
 
+**GitHub:** [glg/bi_airflow_dags](https://github.com/glg/bi_airflow_dags)
+
 ## Overview
 
 `bi_airflow_dags` contains all **Apache Airflow DAG definitions** for the GLG data platform. Merging a PR to `main` triggers an automatic Docker build and deployment to the production Airflow environment — there is no manual deploy step.

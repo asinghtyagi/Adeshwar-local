@@ -1,5 +1,7 @@
 # gds.clusterconfig.j01 — ECS Cron Job Cluster Configuration
 
+**GitHub:** [glg/gds.clusterconfig.j01](https://github.com/glg/gds.clusterconfig.j01)
+
 ## Overview
 
 `gds.clusterconfig.j01` contains the **GDS (GLG Deployment System) ECS cluster configuration** for the `j01` internal-only jobs cluster. This cluster hosts all scheduled cron jobs and background processing tasks across the GLG platform. Unlike application clusters, `j01` has **no ALB, no DNS, and receives no inbound traffic** — it is exclusively for outbound/scheduled work.

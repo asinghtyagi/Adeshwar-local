@@ -1,5 +1,7 @@
 # PythonProject — Personal Scratch / Experimentation Workspace
 
+**GitHub:** No remote — local only
+
 ## Overview
 
 `PythonProject` is a **personal scratch workspace** used for local experimentation, learning, prototyping, and one-off scripts. It is not a production repository and does not feed any automated pipeline. It serves as a sandboxed environment where new ideas, SQL tests, and tooling experiments can be developed before being promoted to production repos.
