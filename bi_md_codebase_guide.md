@@ -229,42 +229,6 @@ HASH(CONCAT(CAST(PAYMENT_ID AS VARCHAR), COALESCE(CAST(USER_CONTACT_ID AS VARCHA
 
 ---
 
-## Recent Changes (Last Week — as of 2026-11-02)
-
-### PR #93 — Oct 29 — Bug Fix: Cost Centre Data Quality
-**File:** `MD/WORKDAY/NM_PAYMENT/SUPPLIER_INVOICE/etl/NM_PAYMENT_STAGE/NM_PAYMENT_STAGE.sql`
-
-**Problem:** The `SEG1_WORKTAGS` CTE was joining on `NUMERIC_VEGA_ID_C` (a pre-computed column in Salesforce) which had missing or incorrect values for some contacts, causing Cost Centre and Region worktags to be blank or wrong on Workday invoices.
-
-**Fix:** Switched to deriving the numeric ID directly from the raw `VEGA_ID_C` string field using `TRY_TO_NUMBER()`:
-
-```sql
--- Before
-CAST(CON.NUMERIC_VEGA_ID_C AS NUMBER(38,0)) AS USER_CONTACT_ID
-AND CON.NUMERIC_VEGA_ID_C IS NOT NULL
-
--- After
-TRY_TO_NUMBER(CON.VEGA_ID_C) AS USER_CONTACT_ID
-AND TRY_TO_NUMBER(CON.VEGA_ID_C) IS NOT NULL
-```
-
-### PR #92 — Oct 27 — Chore: Hardcoded Employee ID for Parallel Testing
-**File:** `MD/WORKDAY/NM_PAYMENT/SUPPLIER_INVOICE/etl/VW_SUPPLIER_INVOICE/VW_SUPPLIER_INVOICE.sql`
-
-**Change:** Replaced `APPROVER_FUSION_ID` with a constant for deterministic parallel test comparisons:
-
-```sql
--- Before
-APPROVER_FUSION_ID AS EMPLOYEE_ID
-
--- After (temporary)
-CAST(206101 AS NUMBER(38,0)) AS EMPLOYEE_ID
-```
-
-This makes the `EMPLOYEE_ID` field identical across both pipeline runs so other columns can be diffed cleanly. Intended to be reverted after parallel testing completes.
-
----
-
 ## CODEOWNERS
 
 Code ownership is defined in `CODEOWNERS` at the repo root — changes to specific paths require review from the designated owners before merging.
