@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 940" width="1100" height="940">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="940" fill="#f8fafc" rx="16"/>
+
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="bold" fill="#0f172a">GLG DRE Platform Architecture</text>
+
+  <!-- ─────────────────── ZONE 1: SOURCE SYSTEMS ─────────────────── -->
+  <rect x="16" y="55" width="1068" height="125" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="550" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" letter-spacing="2">SOURCE SYSTEMS</text>
+
+  <!-- GLGLIVE -->
+  <rect x="36" y="82" width="215" height="80" rx="7" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="143" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">GLGLIVE</text>
+  <text x="143" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">SQL Server</text>
+  <text x="143" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Expert &amp; project data</text>
+
+  <!-- FUSION -->
+  <rect x="272" y="82" width="215" height="80" rx="7" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="379" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">FUSION</text>
+  <text x="379" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">SQL Server</text>
+  <text x="379" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Client &amp; revenue data</text>
+
+  <!-- Aurora PG -->
+  <rect x="508" y="82" width="215" height="80" rx="7" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="615" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">Aurora PostgreSQL</text>
+  <text x="615" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">AWS</text>
+  <text x="615" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">NM payment &amp; ops data</text>
+
+  <!-- Azure SQL / Great Plains -->
+  <rect x="744" y="82" width="340" height="80" rx="7" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="914" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8">Azure SQL / Great Plains</text>
+  <text x="914" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Azure SQL &amp; Microsoft GP</text>
+  <text x="914" y="144" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Finance &amp; bank account data</text>
+
+  <!-- Bus: verticals down from each box to collector line -->
+  <line x1="143" y1="162" x2="143" y2="183" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="379" y1="162" x2="379" y2="183" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="615" y1="162" x2="615" y2="183" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="914" y1="162" x2="914" y2="183" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Horizontal collector -->
+  <line x1="143" y1="183" x2="914" y2="183" stroke="#64748b" stroke-width="1.5"/>
+  <!-- Center vertical to STAGING -->
+  <line x1="528" y1="183" x2="528" y2="216" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ─────────────────── ZONE 2: STAGING ─────────────────── -->
+  <rect x="172" y="220" width="712" height="60" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="528" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0c4a6e">STAGING_SF</text>
+  <text x="528" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#0369a1">Snowflake — raw replicated tables from all source systems</text>
+
+  <!-- Arrow down to repo layer -->
+  <line x1="528" y1="280" x2="528" y2="313" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ─────────────────── ZONE 3: TRANSFORMATION REPOS ─────────────────── -->
+  <rect x="16" y="318" width="1068" height="128" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="550" y="337" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#166534" letter-spacing="2">TRANSFORMATION REPOS</text>
+
+  <!-- BI_vdw -->
+  <rect x="36" y="344" width="238" height="88" rx="7" fill="white" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="155" y="369" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#15803d">BI_vdw</text>
+  <text x="155" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">50+ SQL ETL scripts</text>
+  <text x="155" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">F_ D_ B_ A_ table prefixes</text>
+  <text x="155" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Snowflake SQL</text>
+
+  <!-- bi_etl (center — slightly bolder) -->
+  <rect x="392" y="344" width="272" height="88" rx="7" fill="white" stroke="#16a34a" stroke-width="2"/>
+  <text x="528" y="369" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d">bi_etl</text>
+  <text x="528" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Python 3.13 ETL engine</text>
+  <text x="528" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">FK-ordered batch loads · 3 sync modes</text>
+  <text x="528" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">SQLAlchemy · AWS Secrets · GitPython</text>
+
+  <!-- SchemaTron -->
+  <rect x="782" y="344" width="302" height="88" rx="7" fill="white" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="933" y="369" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#15803d">SchemaTron</text>
+  <text x="933" y="387" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">DDL change management</text>
+  <text x="933" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">40+ Snowflake · 25+ SQL Server DBs</text>
+  <text x="933" y="421" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">ISO 27001 audit compliance</text>
+
+  <!-- BI_vdw → bi_etl -->
+  <line x1="274" y1="388" x2="390" y2="388" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <!-- SchemaTron → bi_etl -->
+  <line x1="782" y1="388" x2="666" y2="388" stroke="#22c55e" stroke-width="1.5" marker-end="url(#arr-g)"/>
+
+  <!-- bi_etl → warehouse -->
+  <line x1="528" y1="432" x2="528" y2="465" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ─────────────────── ZONE 4: SNOWFLAKE WAREHOUSE ─────────────────── -->
+  <rect x="16" y="469" width="1068" height="128" rx="10" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="550" y="488" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4c1d95" letter-spacing="2">SNOWFLAKE DATA WAREHOUSE</text>
+
+  <!-- WARS -->
+  <rect x="36" y="496" width="494" height="88" rx="7" fill="white" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="283" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4c1d95">WARS</text>
+  <text x="283" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Warehouse &amp; Analytics Reporting System</text>
+  <text x="283" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">F_ Fact · D_ Dimension · B_ Bridge · A_ Aggregate</text>
+  <text x="283" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Managed by: BI_vdw + bi_etl + SchemaTron</text>
+
+  <!-- MASTER_DATA -->
+  <rect x="548" y="496" width="536" height="88" rx="7" fill="white" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="816" y="522" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4c1d95">MASTER_DATA</text>
+  <text x="816" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#64748b">Workday-ready master data</text>
+  <text x="816" y="558" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">USAGE · CLIENT_CONTRACT · NM_PAYMENT · THIN_LEDGER</text>
+  <text x="816" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Managed by: bi_md</text>
+
+  <!-- Arrows to consumers -->
+  <line x1="283" y1="584" x2="283" y2="617" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="816" y1="584" x2="816" y2="617" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ─────────────────── ZONE 5: CONSUMERS ─────────────────── -->
+  <rect x="58" y="620" width="450" height="58" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="283" y="646" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#78350f">Looker</text>
+  <text x="283" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400e">BI Dashboards &amp; Self-serve Analytics</text>
+
+  <rect x="592" y="620" width="460" height="58" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="822" y="646" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#78350f">Workday Prism</text>
+  <text x="822" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#92400e">HR &amp; Finance Reporting</text>
+
+  <!-- ─────────────────── DIVIDER ─────────────────── -->
+  <line x1="16" y1="702" x2="1084" y2="702" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <text x="550" y="722" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#475569" letter-spacing="2">ORCHESTRATION LAYER</text>
+
+  <!-- ─────────────────── ORCH BOX 1: Airflow ─────────────────── -->
+  <rect x="16" y="736" width="338" height="188" rx="8" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="185" y="758" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9a3412">Airflow — bi_airflow_dags + bi_jobs</text>
+  <line x1="26" y1="766" x2="344" y2="766" stroke="#fed7aa" stroke-width="1"/>
+  <text x="26" y="783" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ea580c">27 DAGs:</text>
+  <text x="26" y="800" font-family="Arial, sans-serif" font-size="10" fill="#64748b">wars_run_etl — 5× / day (main WARS ETL)</text>
+  <text x="26" y="817" font-family="Arial, sans-serif" font-size="10" fill="#64748b">staging_replicate_* — data ingestion</text>
+  <text x="26" y="834" font-family="Arial, sans-serif" font-size="10" fill="#64748b">revelio / library / loads / vendorgraphic</text>
+  <text x="26" y="851" font-family="Arial, sans-serif" font-size="10" fill="#64748b">looker_warehouse_scaling</text>
+  <text x="26" y="868" font-family="Arial, sans-serif" font-size="10" fill="#64748b">API: Zoom · Kronos · Creatio · ZenHub</text>
+  <text x="26" y="892" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">GitHub Actions → Docker → AWS ECR → ECS</text>
+
+  <!-- ─────────────────── ORCH BOX 2: ECS Cron ─────────────────── -->
+  <rect x="374" y="736" width="352" height="188" rx="8" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="550" y="758" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9a3412">ECS Cron — gds.clusterconfig.j01</text>
+  <line x1="384" y1="766" x2="716" y2="766" stroke="#fed7aa" stroke-width="1"/>
+  <text x="384" y="783" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ea580c">80+ scheduled jobs:</text>
+  <text x="384" y="800" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Invoicing  (invoicerizer-*)</text>
+  <text x="384" y="817" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Payments  (payprocess-*, cm-payment-*)</text>
+  <text x="384" y="834" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Compliance  (compliance-jobs-*)</text>
+  <text x="384" y="851" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Surveys  (surveys-*)</text>
+  <text x="384" y="868" font-family="Arial, sans-serif" font-size="10" fill="#64748b">AI / ML  (ai-intake-*, ai-workers)</text>
+  <text x="384" y="885" font-family="Arial, sans-serif" font-size="10" fill="#64748b">Data ETL  (datahub-*, capiq-*, revelio-*)</text>
+  <text x="384" y="909" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">No inbound traffic — outbound-only cluster</text>
+
+  <!-- ─────────────────── ORCH BOX 3: NM Payment ─────────────────── -->
+  <rect x="746" y="736" width="338" height="188" rx="8" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="915" y="758" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9a3412">nm-payment-account-job</text>
+  <line x1="756" y1="766" x2="1074" y2="766" stroke="#fed7aa" stroke-width="1"/>
+  <text x="756" y="783" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ea580c">NM bank account sync to Workday:</text>
+  <text x="756" y="800" font-family="Arial, sans-serif" font-size="10" fill="#64748b">1. Fetch suppliers (Snowflake)</text>
+  <text x="756" y="817" font-family="Arial, sans-serif" font-size="10" fill="#64748b">2. Pull NM records (GLGLIVE)</text>
+  <text x="756" y="834" font-family="Arial, sans-serif" font-size="10" fill="#64748b">3. Query Great Plains for bank data</text>
+  <text x="756" y="851" font-family="Arial, sans-serif" font-size="10" fill="#64748b">4. AES-CBC decrypt bank credentials</text>
+  <text x="756" y="868" font-family="Arial, sans-serif" font-size="10" fill="#64748b">5. POST to Workday REST API (OAuth2)</text>
+  <text x="756" y="885" font-family="Arial, sans-serif" font-size="10" fill="#64748b">6. Log results to Snowflake</text>
+  <text x="756" y="909" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">Python 3.12 · PyCryptodome · Docker · ECR</text>
+</svg>
