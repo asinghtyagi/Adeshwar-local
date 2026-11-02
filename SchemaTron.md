@@ -2,6 +2,18 @@
 
 **GitHub:** [glg/SchemaTron](https://github.com/glg/SchemaTron)
 
+## Contents
+
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Repository Structure](#repository-structure)
+- [Databases Managed](#databases-managed)
+- [Claude Code Integration](#claude-code-integration)
+- [Change Control Process](#change-control-process)
+- [Script Organization Convention](#script-organization-convention)
+- [IDE Snippets](#ide-snippets)
+- [Related Repositories](#related-repositories)
+
 ## Overview
 
 `SchemaTron` is GLG's **central change management system** for all database schema, code, and data changes. Every DDL statement, DML script, stored procedure, view, and function change across the entire GLG data platform must go through a pull request here. This process is mandatory for **ISO 27001 audit compliance**.

@@ -2,6 +2,18 @@
 
 **GitHub:** [glg/bi_jobs](https://github.com/glg/bi_jobs)
 
+## Contents
+
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Repository Structure](#repository-structure)
+- [CI/CD Flow](#cicd-flow)
+- [Production Docker Image](#production-docker-image)
+- [Local Development Setup](#local-development-setup)
+- [Deployment Scripts](#deployment-scripts)
+- [requirements.txt (Key Dependencies)](#requirementstxt-key-dependencies)
+- [Related Repositories](#related-repositories)
+
 ## Overview
 
 `bi_jobs` is the **infrastructure repository** for GLG's Airflow 3 deployment. It builds the production Docker container image, pushes it to AWS ECR, and deploys it via AWS CodeDeploy. It also contains a full local development environment so engineers can run Airflow on their laptop.

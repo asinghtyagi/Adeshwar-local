@@ -2,6 +2,17 @@
 
 **GitHub:** [glg/BI_vdw](https://github.com/glg/BI_vdw)
 
+## Contents
+
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Repository Structure](#repository-structure)
+- [Table Naming Conventions](#table-naming-conventions)
+- [ETL Architecture](#etl-architecture)
+- [Data Flow](#data-flow)
+- [Governance](#governance)
+- [Related Repositories](#related-repositories)
+
 ## Overview
 
 `BI_vdw` is GLG's primary Business Intelligence data warehouse repository, housing the **WARS** (Warehouse and Analytics Reporting System) SQL ETL codebase. All analytical tables that power Looker dashboards, executive reporting, and downstream data products originate here.
