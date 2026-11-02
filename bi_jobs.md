@@ -1,6 +1,6 @@
 # bi_jobs — Airflow Docker Container Build & Deploy
 
-**GitHub:** [glg/bi_jobs](https://github.com/glg/bi_jobs)
+**GitHub:** [glg/bi_jobs](https://github.com/glg/bi_jobs) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

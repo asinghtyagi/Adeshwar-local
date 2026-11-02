@@ -1,6 +1,6 @@
 # PythonProject — Personal Scratch / Experimentation Workspace
 
-**GitHub:** No remote — local only
+**GitHub:** No remote — local only &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

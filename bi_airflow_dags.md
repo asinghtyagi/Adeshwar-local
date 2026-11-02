@@ -1,6 +1,6 @@
 # bi_airflow_dags — Airflow DAG Definitions
 
-**GitHub:** [glg/bi_airflow_dags](https://github.com/glg/bi_airflow_dags)
+**GitHub:** [glg/bi_airflow_dags](https://github.com/glg/bi_airflow_dags) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

@@ -1,6 +1,6 @@
 # nm-payment-account-job — Network Member Payment Account Sync
 
-**GitHub:** [glg/nm-payment-account-job](https://github.com/glg/nm-payment-account-job)
+**GitHub:** [glg/nm-payment-account-job](https://github.com/glg/nm-payment-account-job) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

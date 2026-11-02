@@ -1,6 +1,6 @@
 # DE_NewHireTraining — DRE New Hire Onboarding Guide
 
-**GitHub:** [asinghtyagi/DE_NewHireTraining](https://github.com/asinghtyagi/DE_NewHireTraining)
+**GitHub:** [asinghtyagi/DE_NewHireTraining](https://github.com/asinghtyagi/DE_NewHireTraining) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

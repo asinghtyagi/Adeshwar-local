@@ -1,6 +1,6 @@
 # bi_etl — Python ETL Engine
 
-**GitHub:** [glg/bi_etl](https://github.com/glg/bi_etl)
+**GitHub:** [glg/bi_etl](https://github.com/glg/bi_etl) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

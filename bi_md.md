@@ -1,6 +1,6 @@
 # bi_md — Master Data ETL
 
-**GitHub:** [glg/bi_md](https://github.com/glg/bi_md)
+**GitHub:** [glg/bi_md](https://github.com/glg/bi_md) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

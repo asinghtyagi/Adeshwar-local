@@ -1,6 +1,6 @@
 # gds.clusterconfig.j01 — ECS Cron Job Cluster Configuration
 
-**GitHub:** [glg/gds.clusterconfig.j01](https://github.com/glg/gds.clusterconfig.j01)
+**GitHub:** [glg/gds.clusterconfig.j01](https://github.com/glg/gds.clusterconfig.j01) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

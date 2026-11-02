@@ -1,6 +1,6 @@
 # SchemaTron — Database Schema Change Management
 
-**GitHub:** [glg/SchemaTron](https://github.com/glg/SchemaTron)
+**GitHub:** [glg/SchemaTron](https://github.com/glg/SchemaTron) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 

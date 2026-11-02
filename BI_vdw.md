@@ -1,6 +1,6 @@
 # BI_vdw — WARS Data Warehouse
 
-**GitHub:** [glg/BI_vdw](https://github.com/glg/BI_vdw)
+**GitHub:** [glg/BI_vdw](https://github.com/glg/BI_vdw) &nbsp;·&nbsp; **Last updated:** 2026-11-02
 
 ## Contents
 
