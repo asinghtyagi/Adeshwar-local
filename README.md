@@ -17,25 +17,74 @@ Personal knowledge base and documentation for GLG DRE (Data and Reporting Engine
 | `nm-payment-account-job` | NM bank account sync to Workday (AES decrypt + REST API) | [nm-payment-account-job.md](./nm-payment-account-job.md) |
 | `PythonProject` | Personal scratch / experimentation workspace | [PythonProject.md](./PythonProject.md) |
 
-## Platform Architecture (High Level)
+## Platform Architecture
 
 ```
-Source Systems
-(GLGLIVE SQL Server, FUSION, Aurora PG, Azure SQL, Great Plains)
-        │
-        ▼
-   STAGING_SF (Snowflake)
-        │
-        ▼
-   bi_etl (Python engine) ◄── BI_vdw (SQL scripts) ◄── SchemaTron (DDL changes)
-        │
-        ▼
-   WARS / MASTER_DATA (Snowflake)
-        │
-        ├──► Looker (dashboards)
-        └──► Workday Prism (HR/Finance)
+╔══════════════════════════════════════════════════════════════════════════╗
+║                          SOURCE SYSTEMS                                  ║
+║                                                                          ║
+║  ┌─────────────┐  ┌──────────┐  ┌─────────────┐  ┌──────────────────┐  ║
+║  │  GLGLIVE    │  │  FUSION  │  │  Aurora PG  │  │ Azure SQL /      │  ║
+║  │ (SQL Server)│  │(SQL Svr) │  │  (AWS)      │  │ Great Plains     │  ║
+║  └──────┬──────┘  └────┬─────┘  └──────┬──────┘  └────────┬─────────┘  ║
+╚═════════╪══════════════╪═══════════════╪══════════════════╪═════════════╝
+          │              │               │                   │
+          └──────────────┴───────┬───────┘                   │
+                                 │                           │
+                    ┌────────────▼────────────┐              │
+                    │    STAGING_SF           │              │
+                    │    (Snowflake)          │              │
+                    │    Raw replicated data  │              │
+                    └────────────┬────────────┘              │
+                                 │                           │
+          ┌──────────────────────┘                           │
+          │                                                  │
+          │   ┌──────────────────────────────────────────┐   │
+          │   │           REPO LAYER                     │   │
+          │   │                                          │   │
+          │   │  BI_vdw ──── SQL ETL scripts             │   │
+          │   │     │                                    │   │
+          │   │  bi_etl ─── Python engine (orchestrates) │   │
+          │   │     │            ▲                       │   │
+          │   │  SchemaTron ─── DDL change management    │   │
+          │   │                                          │   │
+          │   └──────────────────┬───────────────────────┘   │
+          └──────────────────────┤                           │
+                                 │                           │
+╔════════════════════════════════╪═══════════════════════════╪═════════════╗
+║                    SNOWFLAKE DATA WAREHOUSE                 │             ║
+║                                 │                           │             ║
+║  ┌──────────────────────────────▼──────┐  ┌────────────────▼───────────┐ ║
+║  │            WARS                     │  │       MASTER_DATA          │ ║
+║  │  F_ Fact  │ D_ Dim  │ A_ Aggregate  │  │  Workday-ready data        │ ║
+║  │  B_ Bridge tables                   │  │  (bi_md repo manages this) │ ║
+║  └──────┬──────────────────────────────┘  └──────────────┬─────────────┘ ║
+╚═════════╪════════════════════════════════════════════════╪════════════════╝
+          │                                                │
+          ▼                                                ▼
+   ┌─────────────┐                               ┌────────────────────┐
+   │   Looker    │                               │   Workday Prism    │
+   │  Dashboards │                               │   HR / Finance     │
+   └─────────────┘                               └────────────────────┘
 
-Orchestration: bi_airflow_dags (DAGs) → bi_jobs (Docker/ECR) → Airflow on AWS ECS
-Cron Jobs: gds.clusterconfig.j01 (80+ ECS scheduled tasks)
-Payments: nm-payment-account-job (Workday bank account sync)
+
+══════════════════════  ORCHESTRATION LAYER  ══════════════════════════════
+
+  bi_airflow_dags ──► bi_jobs (Docker/ECR) ──► Airflow 3 on AWS ECS
+        │
+        ├── wars_run_etl          (5× / day — main WARS pipeline)
+        ├── staging_replicate_*   (data ingestion from source systems)
+        ├── revelio / library / loads / vendorgraphic refreshes
+        └── API integrations      (Zoom, Kronos, Creatio, ZenHub …)
+
+  gds.clusterconfig.j01 ──► 80+ ECS cron jobs
+        ├── Invoicing             (invoicerizer-*)
+        ├── Payments              (payprocess-*, cm-payment-*)
+        ├── Compliance            (compliance-jobs-*)
+        ├── Surveys               (surveys-*)
+        ├── AI / ML               (ai-intake-*, ai-workers)
+        └── Data / ETL            (datahub-*, capiq-*, revelio-*)
+
+  nm-payment-account-job ──► Workday REST API
+        └── AES-decrypt GP bank data → POST bank account updates
 ```
