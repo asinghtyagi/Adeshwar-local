@@ -97,4 +97,3 @@ Scripts follow the same naming and sync-mode conventions as `BI_vdw` and are exe
 | `bi_airflow_dags` | Schedules the MD ETL runs |
 | `SchemaTron` | Manages DDL changes to the MASTER_DATA database |
 | `nm-payment-account-job` | Downstream consumer — syncs NM payment data to Workday |
-
